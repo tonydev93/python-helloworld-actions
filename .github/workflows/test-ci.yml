@@ -3,12 +3,12 @@
 name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the dev branch
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,7 +24,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: pixelpotato/python-helloworld # list of Docker images to use as base name for tags
+          images: theclock160593/python-helloworld # list of Docker images to use as base name for tags
           tag-sha: true # add git short SHA as Docker tag
      
      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
